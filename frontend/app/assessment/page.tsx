@@ -211,7 +211,7 @@ export default function AssessmentPage() {
   const handleSubmit = async () => {
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:8000/api/assess', {
+      const response = await axios.post(process.env.NEXT_PUBLIC_API_URL + '/api/assess', {
         answers,
       })
       router.push(`/results?data=${encodeURIComponent(JSON.stringify(response.data))}`)

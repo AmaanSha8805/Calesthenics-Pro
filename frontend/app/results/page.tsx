@@ -37,7 +37,7 @@ function ResultsContent() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/generate-pdf',
+        process.env.NEXT_PUBLIC_API_URL + '/api/generate-pdf',
         results,
         { responseType: 'blob' }
       )
